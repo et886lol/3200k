@@ -1,6 +1,3 @@
-__author__ = 'zmiller'
-
-
 def hist(s):
     """returns the histogram of the characters in s
 
@@ -11,7 +8,13 @@ def hist(s):
     {'!': 2, 'x': 2}
 
     """
-    pass
+    d = {}
+    for i in s:
+        if i not in d:
+            d[i] = 1
+        else:
+            d[i] += 1
+    return d
 
 
 def str_to_int(s):
@@ -26,7 +29,10 @@ def str_to_int(s):
     hint: the built in ord and chr functions
 
     """
-    pass
+    result = ""
+    for a in s:
+        result += str(ord(a))
+    return int(result)
 
 
 def null_list(length):
@@ -39,4 +45,13 @@ def null_list(length):
     [None]
 
     """
-    pass
+#   return [None] * length
+    results =[]
+    for b in range(length):
+        results.append(None)
+    return results
+
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
